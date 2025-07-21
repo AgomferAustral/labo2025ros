@@ -1,0 +1,213 @@
+semilla_primigenia: 888877.0
+experimento: completo-std-77b
+dataset: gerencial_competencia_2025.csv.gz
+DR:
+  metodo: rank_cero_fijo
+trainingstrategy:
+  validate: 202107.0
+  training:
+  - 202106.0
+  - 202105.0
+  - 202104.0
+  - 202103.0
+  - 202102.0
+  - 202101.0
+  - 202012.0
+  - 202011.0
+  - 202010.0
+  - 202009.0
+  - 202008.0
+  - 202007.0
+  - 202006.0
+  - 202005.0
+  training_pct: 1.0
+  positivos:
+  - BAJA+1
+  - BAJA+2
+  final_train:
+  - 202107.0
+  - 202106.0
+  - 202105.0
+  - 202104.0
+  - 202103.0
+  - 202102.0
+  - 202101.0
+  - 202012.0
+  - 202011.0
+  - 202010.0
+  - 202009.0
+  - 202008.0
+  - 202007.0
+  - 202006.0
+  - 202005.0
+  future: 202109.0
+hipeparametertuning:
+  num_interations: 10.0
+  hs:
+    pars:
+      num_leaves:
+        id: num_leaves
+        type: integer
+        len: 1
+        lower: 2
+        upper: 256
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      min_data_in_leaf:
+        id: min_data_in_leaf
+        type: integer
+        len: 1
+        lower: 2
+        upper: 8192
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      coverage:
+        id: coverage
+        type: numeric
+        len: 1
+        lower: 0.05
+        upper: 1.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      min_gain_to_split:
+        id: min_gain_to_split
+        type: numeric
+        len: 1
+        lower: 0.0
+        upper: 10.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      bagging_fraction:
+        id: bagging_fraction
+        type: numeric
+        len: 1
+        lower: 0.5
+        upper: 1.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+    forbidden: ~
+lgbm:
+  param_fijos:
+    objective: binary
+    metric: auc
+    first_metric_only: yes
+    boost_from_average: yes
+    feature_pre_filter: no
+    verbosity: -100.0
+    force_row_wise: yes
+    seed: 888877.0
+    max_bin: 31.0
+    learning_rate: 0.03
+    feature_fraction: 0.5
+    num_iterations: 2048.0
+    early_stopping_rounds: 200.0
+out:
+  lgbm:
+    mejores_hiperparametros:
+      num_leaves: 164
+      min_data_in_leaf: 4
+      num_iterations: 179
+FT:
+  semillerio: 50.0
+  semillas:
+  - 586577
+  - 726809
+  - 298937
+  - 617467
+  - 268547
+  - 536891
+  - 344017
+  - 520631
+  - 377477
+  - 583139
+  - 750797
+  - 411589
+  - 612193
+  - 187633
+  - 849601
+  - 208591
+  - 622669
+  - 807299
+  - 325319
+  - 509741
+  - 696737
+  - 236869
+  - 766907
+  - 208889
+  - 312623
+  - 579539
+  - 233693
+  - 160687
+  - 630181
+  - 414283
+  - 927709
+  - 905143
+  - 395173
+  - 715439
+  - 245911
+  - 126341
+  - 540101
+  - 133811
+  - 385129
+  - 675151
+  - 951413
+  - 472063
+  - 374447
+  - 424121
+  - 469717
+  - 471407
+  - 216233
+  - 857321
+  - 128351
+  - 776879
+kaggle:
+  competencia: labo-i-2025-rosario-gerencial
+  cortes:
+  - 600.0
+  - 650.0
+  - 700.0
+  - 750.0
+  - 800.0
+  - 850.0
+  - 900.0
+  - 950.0
+  - 1000.0
+  - 1050.0
+  - 1100.0
+  - 1150.0
+  - 1200.0
